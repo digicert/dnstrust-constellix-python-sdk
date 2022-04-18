@@ -1,0 +1,5 @@
+#!/bin/sh
+SOURCES="*.py constellixsdk/*.py constellixsdk/api/*.py examples/constellixsdk/*.py qa/constellixsdk/*.py sonarsdk/*.py sonarsdk/api/*.py examples/sonarsdk/*.py qa/sonarsdk/*.py"
+
+pycodestyle --ignore=E221,E241,E251,E722,E741,W504 $SOURCES
+pyflakes $SOURCES
