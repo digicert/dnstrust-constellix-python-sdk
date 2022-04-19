@@ -16,6 +16,7 @@ class IpFilter():
         self.__asn                 = parse_payload(payload, "asn")
         self.__ipv4                = parse_payload(payload, "ipv4")
         self.__ipv6                = parse_payload(payload, "ipv6")
+        self.__regions             = parse_payload(payload, "regions")
         self.__payload = payload
 
     @property
@@ -128,5 +129,15 @@ class IpFilter():
         """
         try:
             return self.__ipv6
+        except AttributeError:
+            return None
+
+    @property
+    def regions(self):
+        """
+        Regions or Regions and ASNs this filter applies to
+        """
+        try:
+            return self.__regions
         except AttributeError:
             return None
