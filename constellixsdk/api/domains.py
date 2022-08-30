@@ -152,6 +152,18 @@ class Domains():
         payload = self.__api_client.do_get("domains/{}".format(id))
         return Domain(self.__api_client, payload["data"])
 
+
+    def get_idByName(self, name):
+        """
+        Fetches a single domain in your account
+        """
+        payload = self.__api_client.do_get("search/domains", {"name": format(name)})
+        domainID = None
+        for data in payload["data"]:
+            domainID = data["id"]
+            break
+        return domainID
+
     def create_domain(self, param):
         """
         Creates a new domain in your account.
