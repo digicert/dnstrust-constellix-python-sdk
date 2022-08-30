@@ -91,6 +91,7 @@ class RecordParam():
         ASIA_PACIFIC = "asia-pacific"
         OCEANIA = "oceania"
         SOUTH_AMERICA = "south-america"
+        AFRICA = "africa"
 
     class Mode(Enum):
         STANDARD = "standard"
