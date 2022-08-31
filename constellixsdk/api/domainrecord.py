@@ -10,34 +10,31 @@ class DomainRecord():
         self.__api_client = apiclient
         self.__domain_id = domainid
 
-        self.__id                  = parse_payload(payload, "id")
-        self.__type                = parse_payload(payload, "type")
-        self.__ttl                 = parse_payload(payload, "ttl")
-        self.__enabled             = parse_payload(payload, "enabled")
-        self.__name                = parse_payload(payload, "name")
-        self.__region              = parse_payload(payload, "region")
+        self.__id = parse_payload(payload, "id")
+        self.__type = parse_payload(payload, "type")
+        self.__ttl = parse_payload(payload, "ttl")
+        self.__enabled = parse_payload(payload, "enabled")
+        self.__name = parse_payload(payload, "name")
+        self.__region = parse_payload(payload, "region")
         try:
-            self.__ipfilterId      = parse_payload(payload, "ipfilter")["id"]
+            self.__ipfilterId = parse_payload(payload, "ipfilter")["id"]
         except:
             self.__ipfilterId = None
         try:
-            self.__geoproximityId  = parse_payload(
-                payload,
-                "geoproximity"
-            )["id"]
+            self.__geoproximityId = parse_payload(payload,"geoproximity")["id"]
         except:
             self.__geoproximityId = None
-        self.__ipfilterDrop        = parse_payload(payload, "ipfilterDrop")
-        self.__notes               = parse_payload(payload, "notes")
+        self.__ipfilterDrop = parse_payload(payload, "ipfilterDrop")
+        self.__notes = parse_payload(payload, "notes")
         try:
-            self.__contactsId      = parse_payload(payload, "contacts")["id"]
+            self.__contactsId = parse_payload(payload, "contacts")["id"]
         except:
             self.__contactsId = None
-        self.__mode                = parse_payload(payload, "mode")
-        self.__value               = parse_payload(payload, "value")
-        self.__lastValues          = parse_payload(payload, "lastValues")
+        self.__mode = parse_payload(payload, "mode")
+        self.__value = parse_payload(payload, "value")
+        self.__lastValues = parse_payload(payload, "lastValues")
         try:
-            self.__domainId        = parse_payload(payload, "domain")["id"]
+            self.__domainId = parse_payload(payload, "domain")["id"]
         except:
             self.__domainId = None
         self.__payload = payload

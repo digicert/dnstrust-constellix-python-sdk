@@ -70,9 +70,7 @@ def remove_empty_elements(d):
         ]
     else:
         return {
-            k: v for k, v in
-            ((k, remove_empty_elements(v)) for k, v in d.items())
-            if not empty(v)
+            k: v for k, v in ((k, remove_empty_elements(v)) for k, v in d.items()) if (not empty(v) or k == "name")
         }
 
 
@@ -94,3 +92,4 @@ class ParamEncoder(JSONEncoder):
 
 def param_to_json(param):
     return json.dumps(param, cls=ParamEncoder)
+
